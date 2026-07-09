@@ -14,15 +14,21 @@ namespace Core.Models
             _isbn = isbn;
             _title = title;
             _author = author;
+            // extra defense
             _quantity = quantity < 0 ? 0 : quantity;
         }
 
+        // properties to expose the private fields (no setting)
         public string Isbn => _isbn;
         public string Title => _title;
         public string Author => _author;
         public int Quantity => _quantity;
+
+        // convenience property to check if the book is available for borrowing
         public bool IsAvailable => _quantity > 0;
 
+
+        // called when a borrow is approved. throws if it would go negative
         public void Decrease(int amount = 1)
         {
             if (_quantity - amount < 0)
@@ -30,6 +36,7 @@ namespace Core.Models
             _quantity -= amount;
         }
 
+        // called when a book is returned, or admin restocks
         public void Increase(int amount = 1)
         {
             if (amount > 0) _quantity += amount;

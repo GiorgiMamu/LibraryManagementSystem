@@ -7,8 +7,8 @@ namespace Core.Interfaces
     {
         List<BorrowRecord> GetAll();
         BorrowRecord GetById(string borrowId);
-        List<BorrowRecord> GetByUserId(int userId);
-        void Add(BorrowRecord record);
-        void Update(BorrowRecord record);
+        List<BorrowRecord> GetByUserId(int userId); // my borrow history
+        void Add(BorrowRecord record); // new borrow record / request
+        void Update(BorrowRecord record); // status changes: approve/reject/return
     }
 }

@@ -3,6 +3,7 @@ using Core.Enums;
 
 namespace Core.Models
 {
+    // Represents a log entry in the system
     public class LogEntry
     {
         public DateTime Timestamp { get; }

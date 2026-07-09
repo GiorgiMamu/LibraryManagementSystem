@@ -4,11 +4,14 @@ namespace Core.Models
 {
     public class AdminUser : User
     {
-        public AdminUser(int id, string username, string passwordHash, decimal fines = 0m)
-            : base(id, username, passwordHash, fines) { }
+        public AdminUser(int id, string username, string passwordHash)
+            : base(id, username, passwordHash) { }
 
+
+        // set the role to Admin for this subclass
         public override UserRole Role => UserRole.Admin;
 
+        // different menu entirely — polymorphism in action 
         public override void DisplayMenu()
         {
             System.Console.WriteLine("--- Admin Menu ---");
