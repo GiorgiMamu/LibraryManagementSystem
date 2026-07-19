@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Core.Exceptions;
 using Core.Interfaces;
+using Core.Helpers;
 using Core.Models;
 using Services.Interfaces;
 
@@ -22,6 +23,15 @@ namespace Services
 
         public void AddBook(string isbn, string title, string author, int quantity)
         {
+            if (!Validator.IsNotEmpty(isbn))
+                throw new ArgumentException("ISBN cannot be empty.");
+            if (!Validator.IsNotEmpty(title))
+                throw new ArgumentException("Title cannot be empty.");
+            if (!Validator.IsValidPersonName(author))
+                throw new ArgumentException("Author must start with a letter and contain only letters, spaces, or hyphens.");
+            if (quantity < 0)
+                throw new ArgumentException("Quantity cannot be negative.");
+
             _bookRepository.Add(new Book(isbn, title, author, quantity));
             _logger.LogInfo($"Book added: {isbn} - {title}");
         }

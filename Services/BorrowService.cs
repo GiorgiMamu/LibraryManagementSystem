@@ -5,6 +5,7 @@ using Core.Enums;
 using Core.Exceptions;
 using Core.Interfaces;
 using Core.Models;
+using Core.Helpers;
 using Services.Interfaces;
 
 namespace Services
@@ -32,6 +33,9 @@ namespace Services
 
         public BorrowRecord RequestBorrow(ClientUser client, string isbn)
         {
+            if (!Validator.IsNotEmpty(isbn))
+                throw new ArgumentException("ISBN cannot be empty.");
+
             if (!client.CanBorrow())
                 throw new FineOutstandingException(client.Fines);
 

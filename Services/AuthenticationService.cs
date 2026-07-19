@@ -67,6 +67,11 @@ namespace Services
 
         public void VerifyAccount(string email, string code)
         {
+            if (!Validator.IsValidEmail(email))
+                throw new ArgumentException("Email address is not valid.");
+            if (!Validator.IsNotEmpty(code))
+                throw new ArgumentException("Verification code cannot be empty.");
+
             // ?? If the user is not found, throw a UserNotFoundException with the email (if-null)
             var user = _userRepository.GetByEmail(email)
                 ?? throw new UserNotFoundException(email);
@@ -83,6 +88,9 @@ namespace Services
         //generates and sends a brand-new code, replacing the old one
         public void ResendVerificationCode(string email)
         {
+            if (!Validator.IsValidEmail(email))
+                throw new ArgumentException("Email address is not valid.");
+
             var user = _userRepository.GetByEmail(email)
                 ?? throw new UserNotFoundException(email);
 
@@ -100,6 +108,9 @@ namespace Services
 
         public User Login(string username, string password)
         {
+            if (!Validator.IsNotEmpty(username) || !Validator.IsNotEmpty(password))
+                throw new InvalidCredentialsException();
+
             var user = _userRepository.GetByUsername(username);
 
             if (user == null || !_passwordHasher.Verify(password, user.PasswordHash))

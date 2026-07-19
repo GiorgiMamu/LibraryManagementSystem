@@ -159,17 +159,8 @@ namespace UI.Menus
             while (true)
             {
                 string input = AnsiConsole.Ask<string>("Due date for return (yyyy-MM-dd):");
-                if (!Validator.TryParseDate(input, out dueDate))
-                {
-                    AnsiConsole.MarkupLine("[red]That's not a valid date.[/]");
-                    continue;
-                }
-                if (dueDate.Date <= DateTime.Now.Date)
-                {
-                    AnsiConsole.MarkupLine("[red]Due date must be in the future.[/]");
-                    continue;
-                }
-                break;
+                if (Validator.TryParseDate(input, out dueDate)) break;
+                AnsiConsole.MarkupLine("[red]That's not a valid date.[/]");
             }
 
             _borrowService.ApproveRequest(selected, dueDate);
