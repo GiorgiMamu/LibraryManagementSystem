@@ -9,7 +9,7 @@ namespace Core.Interfaces
     public interface IBookRepository
     {
         List<Book> GetAll();
-        Book GetByIsbn(string isbn);
+        Book? GetByIsbn(string isbn);
         List<Book> Search(string keyword); // title/author search feature
         void Add(Book book);
         void Remove(string isbn);

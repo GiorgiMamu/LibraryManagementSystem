@@ -1,0 +1,174 @@
+2026-07-18 20:03:19 | Info | Email sent to giorgi.mamulashvili261@ens.tsu.edu.ge: "Verify your Library account"
+2026-07-18 20:03:19 | Info | User 'admin' registered, verification email sent to giorgi.mamulashvili261@ens.tsu.edu.ge.
+2026-07-18 20:04:24 | Info | User 'admin' verified their account.
+2026-07-18 20:08:33 | Info | Book removed: 8
+2026-07-18 20:09:25 | Info | Book added: 111 - gios book
+2026-07-18 20:11:46 | Info | Quantity adjusted for 111: +100
+2026-07-18 20:11:51 | Info | Book removed: 111
+2026-07-18 20:12:39 | Info | Email sent to g.mamulashvili01@gmail.com: "Verify your Library account"
+2026-07-18 20:12:39 | Info | User 'client' registered, verification email sent to g.mamulashvili01@gmail.com.
+2026-07-18 20:12:51 | Info | User 'client' verified their account.
+2026-07-18 20:13:33 | Info | Book added: 111 - mamus diary
+2026-07-18 20:14:47 | Info | Borrow request created: B60999 by user 2
+2026-07-18 20:17:09 | Info | Borrow approved: B60999
+
+
+
+2026-07-19 14:52:39 | Info | Email sent to giorgi.mamulashvili261@ens.tsu.edu.ge: "Verify your Library account"
+2026-07-19 14:52:39 | Info | User 'Admin' registered, verification email sent to giorgi.mamulashvili261@ens.tsu.edu.ge.
+2026-07-19 14:53:27 | Info | Email sent to giorgi.mamulashvili261@ens.tsu.edu.ge: "Your new verification code"
+2026-07-19 14:53:27 | Info | Resent verification code to giorgi.mamulashvili261@ens.tsu.edu.ge.
+2026-07-19 15:00:56 | Info | Email sent to giorgi.mamulashvili261@ens.tsu.edu.ge: "Your new verification code"
+2026-07-19 15:00:56 | Info | Resent verification code to giorgi.mamulashvili261@ens.tsu.edu.ge.
+2026-07-19 15:01:58 | Info | Email sent to giorgi.mamulashvili261@ens.tsu.edu.ge: "Verify your Library account"
+2026-07-19 15:01:58 | Info | User 'admin' registered, verification email sent to giorgi.mamulashvili261@ens.tsu.edu.ge.
+2026-07-19 15:02:10 | Info | Email sent to giorgi.mamulashvili261@ens.tsu.edu.ge: "Your new verification code"
+2026-07-19 15:02:10 | Info | Resent verification code to giorgi.mamulashvili261@ens.tsu.edu.ge.
+2026-07-19 15:02:31 | Info | Email sent to giorgi.mamulashvili261@ens.tsu.edu.ge: "Your new verification code"
+2026-07-19 15:02:31 | Info | Resent verification code to giorgi.mamulashvili261@ens.tsu.edu.ge.
+2026-07-19 15:03:11 | Info | Email sent to giorgi.mamulashvili261@ens.tsu.edu.ge: "Your new verification code"
+2026-07-19 15:03:11 | Info | Resent verification code to giorgi.mamulashvili261@ens.tsu.edu.ge.
+2026-07-19 15:06:22 | Info | Email sent to giorgi.mamulashvili261@ens.tsu.edu.ge: "Your new verification code"
+2026-07-19 15:06:22 | Info | Resent verification code to giorgi.mamulashvili261@ens.tsu.edu.ge.
+2026-07-19 15:06:33 | Info | User 'admin' verified their account.
+2026-07-19 15:08:26 | Info | Email sent to g.mamulashvili01@gmail.com: "Verify your Library account"
+2026-07-19 15:08:26 | Info | User 'client' registered, verification email sent to g.mamulashvili01@gmail.com.
+2026-07-19 15:08:44 | Info | User 'client' verified their account.
+2026-07-19 15:11:20 | Info | Book added: 1234 - Gio's Diary
+2026-07-19 15:11:42 | Info | Quantity adjusted for 1234: +5
+2026-07-19 15:12:03 | Info | Borrow request created: B96053 by user 2
+2026-07-19 15:13:25 | Info | Borrow approved: B96053, due 2026-07-20
+2026-07-19 15:14:00 | Info | [Simulated email to client] Reminder: book 1234 is due tomorrow.
+2026-07-19 15:15:51 | Info | Book added: 2345 - 1984
+2026-07-19 15:16:22 | Info | Borrow request created: B91624 by user 2
+2026-07-19 15:16:30 | Info | Borrow rejected: B91624
+2026-07-19 15:16:59 | Info | Borrow request created: B44918 by user 2
+2026-07-19 15:17:49 | Info | Borrow approved: B44918, due 2026-07-20
+2026-07-19 15:17:51 | Info | [Simulated email to client] Reminder: book 1234 is due tomorrow.
+2026-07-19 15:17:51 | Info | [Simulated email to client] Reminder: book 2345 is due tomorrow.
+2026-07-19 15:20:28 | Info | Borrow request created: B37037 by user 2
+2026-07-19 15:22:33 | Info | Borrow request created: B87558 by user 2
+2026-07-19 15:22:56 | Info | Borrow request created: B27993 by user 2
+2026-07-19 15:23:06 | Error | Skipped malformed line in C:\Users\oto\Desktop\LibraryManagementSystem\Repository\Data\borrows.txt: 'B44918 | 2 | 2345 | 2026-07-20 | ApprovedB87558 | 2 | 1234 |  | Pending' :: Requested value 'ApprovedB87558' was not found.
+2026-07-19 15:23:33 | Info | Borrow request created: B56807 by user 2
+2026-07-19 15:23:40 | Error | Skipped malformed line in C:\Users\oto\Desktop\LibraryManagementSystem\Repository\Data\borrows.txt: 'B44918 | 2 | 2345 | 2026-07-20 | ApprovedB87558 | 2 | 1234 |  | Pending' :: Requested value 'ApprovedB87558' was not found.
+2026-07-19 15:24:23 | Info | Borrow request created: B24805 by user 2
+2026-07-19 15:24:29 | Error | Skipped malformed line in C:\Users\oto\Desktop\LibraryManagementSystem\Repository\Data\borrows.txt: 'B44918 | 2 | 2345 | 2026-07-20 | ApprovedB87558 | 2 | 1234 |  | Pending' :: Requested value 'ApprovedB87558' was not found.
+2026-07-19 15:25:06 | Info | Borrow request created: B67606 by user 2
+2026-07-19 15:26:25 | Info | Borrow approved: B87558, due 2026-09-12
+2026-07-19 15:26:31 | Info | Borrow rejected: B56807
+2026-07-19 15:26:47 | Info | Borrow approved: B27993, due 2028-05-03
+2026-07-19 15:28:52 | Info | Book returned: B96053
+2026-07-19 15:30:03 | Info | Book returned: B44918
+2026-07-19 15:30:55 | Warning | Borrow B87558 automatically marked Overdue.
+2026-07-19 15:32:56 | Info | Book added: 5678 - 7
+2026-07-19 15:38:03 | Info | Borrow request created: B47843 by user 2
+2026-07-19 15:38:37 | Info | Borrow approved: B47843, due 2026-07-20
+2026-07-19 15:40:47 | Info | Book returned: B47843
+2026-07-19 15:42:08 | Warning | [Simulated email to client] Overdue: book 1234 was due on 2026-06-12.
+2026-07-19 15:49:13 | Info | Email sent to g.mamulashvili01@gmail.com: "Verify your Library account"
+2026-07-19 15:49:13 | Info | User 'client' registered, verification email sent to g.mamulashvili01@gmail.com.
+2026-07-19 15:49:55 | Info | Email sent to g.mamulashvili01@gmail.com: "Your new verification code"
+2026-07-19 15:49:55 | Info | Resent verification code to g.mamulashvili01@gmail.com.
+2026-07-19 15:50:09 | Info | User 'client' verified their account.
+2026-07-19 15:51:30 | Info | Borrow request created: B13051 by user 2
+2026-07-19 15:52:01 | Info | Borrow approved: B13051, due 2026-07-20
+2026-07-19 15:52:21 | Info | Email sent to g.mamulashvili01@gmail.com: "Overdue: your library book is late"
+2026-07-19 15:52:21 | Warning | Overdue email sent to g.mamulashvili01@gmail.com for B87558
+2026-07-19 15:52:22 | Info | Email sent to g.mamulashvili01@gmail.com: "Reminder: your book is due tomorrow"
+2026-07-19 15:52:22 | Info | Due-tomorrow email sent to g.mamulashvili01@gmail.com for B13051
+2026-07-19 15:53:47 | Info | Email sent to g.mamulashvili01@gmail.com: "Overdue: your library book is late"
+2026-07-19 15:53:47 | Warning | Overdue email sent to g.mamulashvili01@gmail.com for B87558
+2026-07-19 15:53:48 | Info | Email sent to g.mamulashvili01@gmail.com: "Reminder: your book is due tomorrow"
+2026-07-19 15:53:48 | Info | Due-tomorrow email sent to g.mamulashvili01@gmail.com for B13051
+2026-07-19 15:54:45 | Info | Email sent to g.mamulashvili01@gmail.com: "Overdue: your library book is late"
+2026-07-19 15:54:45 | Warning | Overdue email sent to g.mamulashvili01@gmail.com for B87558
+2026-07-19 15:54:47 | Info | Email sent to g.mamulashvili01@gmail.com: "Overdue: your library book is late"
+2026-07-19 15:54:47 | Warning | Overdue email sent to g.mamulashvili01@gmail.com for B27993
+2026-07-19 15:54:48 | Info | Email sent to g.mamulashvili01@gmail.com: "Reminder: your book is due tomorrow"
+2026-07-19 15:54:48 | Info | Due-tomorrow email sent to g.mamulashvili01@gmail.com for B13051
+2026-07-19 15:55:38 | Warning | Borrow B27993 automatically marked Overdue.
+2026-07-19 16:22:56 | Warning | Fine of 18.50 added to user 2 for B87558 (37 day(s) since last check).
+2026-07-19 16:22:56 | Info | Book returned: B87558
+2026-07-19 16:23:20 | Warning | Fine of 38.50 added to user 2 for B27993 (77 day(s) since last check).
+2026-07-19 16:23:22 | Info | Email sent to g.mamulashvili01@gmail.com: "Overdue: your library book is late"
+2026-07-19 16:23:22 | Warning | Overdue email sent to g.mamulashvili01@gmail.com for B27993
+2026-07-19 16:23:23 | Info | Email sent to g.mamulashvili01@gmail.com: "Reminder: your book is due tomorrow"
+2026-07-19 16:23:23 | Info | Due-tomorrow email sent to g.mamulashvili01@gmail.com for B13051
+2026-07-19 16:24:32 | Info | Book returned: B27993
+2026-07-19 16:24:40 | Info | Email sent to g.mamulashvili01@gmail.com: "Reminder: your book is due tomorrow"
+2026-07-19 16:24:40 | Info | Due-tomorrow email sent to g.mamulashvili01@gmail.com for B13051
+2026-07-19 16:25:29 | Info | Email sent to g.mamulashvili01@gmail.com: "Reminder: your book is due tomorrow"
+2026-07-19 16:25:29 | Info | Due-tomorrow email sent to g.mamulashvili01@gmail.com for B13051
+2026-07-19 16:36:44 | Info | Book added: 1234 - 1984
+2026-07-19 16:37:17 | Info | Borrow request created: B70652 by user 2
+2026-07-19 16:37:23 | Info | Borrow request created: B30105 by user 2
+2026-07-19 16:37:26 | Info | Borrow request created: B99648 by user 2
+2026-07-19 16:37:31 | Info | Borrow request created: B61573 by user 2
+2026-07-19 16:37:34 | Info | Borrow request created: B71140 by user 2
+2026-07-19 16:37:37 | Info | Borrow request created: B73869 by user 2
+2026-07-19 16:37:39 | Info | Borrow request created: B30282 by user 2
+2026-07-19 16:37:42 | Info | Borrow request created: B22 by user 2
+2026-07-19 16:38:12 | Info | Quantity adjusted for 1234: +5
+2026-07-19 16:38:44 | Info | Borrow approved: B70652, due 2026-08-02
+2026-07-19 16:38:51 | Info | Borrow rejected: B30105
+2026-07-19 16:39:02 | Info | Borrow approved: B99648, due 2026-07-20
+2026-07-19 16:39:20 | Info | Borrow approved: B61573, due 2028-02-09
+2026-07-19 16:39:26 | Info | Borrow rejected: B73869
+2026-07-19 16:39:41 | Info | Borrow approved: B71140, due 2026-07-20
+2026-07-19 16:39:54 | Info | Borrow approved: B30282, due 2026-09-09
+2026-07-19 16:40:11 | Info | Email sent to g.mamulashvili01@gmail.com: "Reminder: your book is due tomorrow"
+2026-07-19 16:40:11 | Info | Due-tomorrow email sent to g.mamulashvili01@gmail.com for B99648
+2026-07-19 16:40:13 | Info | Email sent to g.mamulashvili01@gmail.com: "Reminder: your book is due tomorrow"
+2026-07-19 16:40:13 | Info | Due-tomorrow email sent to g.mamulashvili01@gmail.com for B71140
+2026-07-19 16:41:18 | Info | Book returned: B30282
+2026-07-19 16:42:22 | Warning | Borrow B71140 automatically marked Overdue.
+2026-07-19 16:42:22 | Warning | Fine of 0.50 added to user 2 for B71140 (1 day(s) since last check).
+2026-07-19 16:42:24 | Info | Email sent to g.mamulashvili01@gmail.com: "Reminder: your book is due tomorrow"
+2026-07-19 16:42:24 | Info | Due-tomorrow email sent to g.mamulashvili01@gmail.com for B99648
+2026-07-19 16:42:25 | Info | Email sent to g.mamulashvili01@gmail.com: "Overdue: your library book is late"
+2026-07-19 16:42:25 | Warning | Overdue email sent to g.mamulashvili01@gmail.com for B71140
+2026-07-19 16:43:14 | Info | Email sent to g.mamulashvili01@gmail.com: "Reminder: your book is due tomorrow"
+2026-07-19 16:43:14 | Info | Due-tomorrow email sent to g.mamulashvili01@gmail.com for B99648
+2026-07-19 16:43:16 | Info | Email sent to g.mamulashvili01@gmail.com: "Overdue: your library book is late"
+2026-07-19 16:43:16 | Warning | Overdue email sent to g.mamulashvili01@gmail.com for B71140
+2026-07-19 16:43:32 | Info | Email sent to g.mamulashvili01@gmail.com: "Reminder: your book is due tomorrow"
+2026-07-19 16:43:32 | Info | Due-tomorrow email sent to g.mamulashvili01@gmail.com for B99648
+2026-07-19 16:43:34 | Info | Email sent to g.mamulashvili01@gmail.com: "Overdue: your library book is late"
+2026-07-19 16:43:34 | Warning | Overdue email sent to g.mamulashvili01@gmail.com for B71140
+2026-07-19 16:45:14 | Warning | Borrow B61573 automatically marked Overdue.
+2026-07-19 16:45:14 | Warning | Fine of 80.00 added to user 2 for B61573 (160 day(s) since last check).
+2026-07-19 16:45:15 | Info | Email sent to g.mamulashvili01@gmail.com: "Reminder: your book is due tomorrow"
+2026-07-19 16:45:15 | Info | Due-tomorrow email sent to g.mamulashvili01@gmail.com for B99648
+2026-07-19 16:45:17 | Info | Email sent to g.mamulashvili01@gmail.com: "Overdue: your library book is late"
+2026-07-19 16:45:17 | Warning | Overdue email sent to g.mamulashvili01@gmail.com for B61573
+2026-07-19 16:45:18 | Info | Email sent to g.mamulashvili01@gmail.com: "Overdue: your library book is late"
+2026-07-19 16:45:18 | Warning | Overdue email sent to g.mamulashvili01@gmail.com for B71140
+2026-07-19 16:46:04 | Info | Email sent to g.mamulashvili01@gmail.com: "Reminder: your book is due tomorrow"
+2026-07-19 16:46:04 | Info | Due-tomorrow email sent to g.mamulashvili01@gmail.com for B99648
+2026-07-19 16:46:05 | Info | Email sent to g.mamulashvili01@gmail.com: "Overdue: your library book is late"
+2026-07-19 16:46:05 | Warning | Overdue email sent to g.mamulashvili01@gmail.com for B61573
+2026-07-19 16:46:07 | Info | Email sent to g.mamulashvili01@gmail.com: "Overdue: your library book is late"
+2026-07-19 16:46:07 | Warning | Overdue email sent to g.mamulashvili01@gmail.com for B71140
+2026-07-19 16:46:22 | Info | Book returned: B61573
+2026-07-19 16:46:29 | Info | Email sent to g.mamulashvili01@gmail.com: "Reminder: your book is due tomorrow"
+2026-07-19 16:46:29 | Info | Due-tomorrow email sent to g.mamulashvili01@gmail.com for B99648
+2026-07-19 16:46:31 | Info | Email sent to g.mamulashvili01@gmail.com: "Overdue: your library book is late"
+2026-07-19 16:46:31 | Warning | Overdue email sent to g.mamulashvili01@gmail.com for B71140
+2026-07-19 16:48:37 | Info | Book returned: B71140
+2026-07-19 16:48:55 | Info | User 2 paid 80.50 towards fines. Remaining: 0.00
+2026-07-19 16:49:22 | Info | Borrow request created: B74464 by user 2
+2026-07-19 17:26:06 | Info | Borrow request created: B92629 by user 2
+2026-07-19 17:26:33 | Info | Borrow approved: B92629, due 2026-07-20
+2026-07-19 17:26:38 | Info | Email sent to g.mamulashvili01@gmail.com: "Reminder: your book is due tomorrow"
+2026-07-19 17:26:38 | Info | Due-tomorrow email sent to g.mamulashvili01@gmail.com for B99648
+2026-07-19 17:26:40 | Info | Email sent to g.mamulashvili01@gmail.com: "Reminder: your book is due tomorrow"
+2026-07-19 17:26:40 | Info | Due-tomorrow email sent to g.mamulashvili01@gmail.com for B92629
+2026-07-19 23:14:36 | Info | Email sent to g.mamulashvili01@gmail.com: "Reminder: your book is due tomorrow"
+2026-07-19 23:14:36 | Info | Due-tomorrow email sent to g.mamulashvili01@gmail.com for B99648
+2026-07-19 23:14:38 | Info | Email sent to g.mamulashvili01@gmail.com: "Reminder: your book is due tomorrow"
+2026-07-19 23:14:38 | Info | Due-tomorrow email sent to g.mamulashvili01@gmail.com for B92629
+2026-07-19 23:14:42 | Info | Email sent to g.mamulashvili01@gmail.com: "Reminder: your book is due tomorrow"
+2026-07-19 23:14:42 | Info | Due-tomorrow email sent to g.mamulashvili01@gmail.com for B99648
+2026-07-19 23:14:44 | Info | Email sent to g.mamulashvili01@gmail.com: "Reminder: your book is due tomorrow"
+2026-07-19 23:14:44 | Info | Due-tomorrow email sent to g.mamulashvili01@gmail.com for B92629

@@ -9,8 +9,9 @@ namespace Core.Interfaces
     public interface IUserRepository
     {
         List<User> GetAll();
-        User GetById(int id);
-        User GetByUsername(string username);
+        User? GetById(int id);
+        User? GetByUsername(string username);
+        User? GetByEmail(string email);
         void Add(User user);
         void Update(User user); 
     }

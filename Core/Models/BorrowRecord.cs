@@ -8,34 +8,43 @@ namespace Core.Models
         public string BorrowId { get; }
         public int UserId { get; }
         public string Isbn { get; }
-        public DateTime DueDate { get; }
-
-        // private setter: status can only change via the methods below,
-        // never assigned directly from outside this class
+        public DateTime? DueDate { get; private set; }
         public BorrowStatus Status { get; private set; }
 
-        public BorrowRecord(string borrowId, int userId, string isbn, DateTime dueDate, BorrowStatus status)
+        // Tracks the last date fines were charged up to, so repeated overdue
+        // checks don't double-charge the same days. Null until the first fine is applied
+        public DateTime? FineLastCalculatedDate { get; private set; }
+
+        public BorrowRecord(string borrowId, int userId, string isbn, DateTime? dueDate,
+            BorrowStatus status, DateTime? fineLastCalculatedDate = null)
         {
             BorrowId = borrowId;
             UserId = userId;
             Isbn = isbn;
             DueDate = dueDate;
             Status = status;
+            FineLastCalculatedDate = fineLastCalculatedDate;
         }
 
-        // these four are the only legal state transitions for a borrow record.
-        public void Approve() => Status = BorrowStatus.Approved;
+        public void Approve(DateTime dueDate)
+        {
+            Status = BorrowStatus.Approved;
+            DueDate = dueDate;
+        }
+
         public void Reject() => Status = BorrowStatus.Rejected;
         public void MarkReturned() => Status = BorrowStatus.Returned;
         public void MarkOverdue() => Status = BorrowStatus.Overdue;
 
+        public void SetFineLastCalculatedDate(DateTime date) => FineLastCalculatedDate = date;
 
-        // convenience methods to check the status of a borrow record
+        public bool IsPastDue(DateTime today) =>
+            DueDate.HasValue && today.Date > DueDate.Value.Date;
+
         public bool IsOverdue(DateTime today) =>
-            Status == BorrowStatus.Approved && today.Date > DueDate.Date;
+            (Status == BorrowStatus.Approved || Status == BorrowStatus.Overdue) && IsPastDue(today);
 
-        // convenience method to check if the borrow record is due tomorrow
         public bool IsDueTomorrow(DateTime today) =>
-            Status == BorrowStatus.Approved && DueDate.Date == today.Date.AddDays(1);
+            Status == BorrowStatus.Approved && DueDate.HasValue && DueDate.Value.Date == today.Date.AddDays(1);
     }
 }

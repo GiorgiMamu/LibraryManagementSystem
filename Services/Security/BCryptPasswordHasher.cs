@@ -2,7 +2,7 @@
 
 namespace Services.Security
 {
-    // Concrete implementation of IPasswordHasher using BCrypt.
+    // Concrete implementation of IPasswordHasher using BCrypt
     public class BCryptPasswordHasher : IPasswordHasher
     {
         public string Hash(string plainPassword) =>

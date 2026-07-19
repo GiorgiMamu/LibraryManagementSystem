@@ -24,6 +24,8 @@ namespace Core.Models
         public string Author => _author;
         public int Quantity => _quantity;
 
+
+
         // convenience property to check if the book is available for borrowing
         public bool IsAvailable => _quantity > 0;
 

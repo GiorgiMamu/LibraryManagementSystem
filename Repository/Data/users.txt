@@ -1,0 +1,2 @@
+1 | admin | giorgi.mamulashvili261@ens.tsu.edu.ge | $2a$11$LXVJVlUUtKLThWdJiIYdweFLc.xEWlgLe3EerSYD/T3cYRLiuZT.C | admin | 0.00 | True | 3436
+2 | client | g.mamulashvili01@gmail.com | $2a$11$dd6mIx19bcVZSDTQ4tXnTOpkoDDaadwASiFADIWdDb0dm99ygQcCu | client | 0.00 | True | 8560
