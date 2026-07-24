@@ -172,3 +172,70 @@
 2026-07-19 23:14:42 | Info | Due-tomorrow email sent to g.mamulashvili01@gmail.com for B99648
 2026-07-19 23:14:44 | Info | Email sent to g.mamulashvili01@gmail.com: "Reminder: your book is due tomorrow"
 2026-07-19 23:14:44 | Info | Due-tomorrow email sent to g.mamulashvili01@gmail.com for B92629
+2026-07-21 19:53:19 | Warning | Borrow B99648 automatically marked Overdue.
+2026-07-21 19:53:19 | Warning | Fine of 0.50 added to user 2 for B99648 (1 day(s) since last check).
+2026-07-21 19:53:19 | Warning | Borrow B92629 automatically marked Overdue.
+2026-07-21 19:53:19 | Warning | Fine of 0.50 added to user 2 for B92629 (1 day(s) since last check).
+2026-07-21 19:53:21 | Info | Email sent to g.mamulashvili01@gmail.com: "Overdue: your library book is late"
+2026-07-21 19:53:21 | Warning | Overdue email sent to g.mamulashvili01@gmail.com for B99648
+2026-07-21 19:53:23 | Info | Email sent to g.mamulashvili01@gmail.com: "Overdue: your library book is late"
+2026-07-21 19:53:23 | Warning | Overdue email sent to g.mamulashvili01@gmail.com for B92629
+2026-07-21 19:53:37 | Info | Email sent to g.mamulashvili01@gmail.com: "Overdue: your library book is late"
+2026-07-21 19:53:37 | Warning | Overdue email sent to g.mamulashvili01@gmail.com for B99648
+2026-07-21 19:53:39 | Info | Email sent to g.mamulashvili01@gmail.com: "Overdue: your library book is late"
+2026-07-21 19:53:39 | Warning | Overdue email sent to g.mamulashvili01@gmail.com for B92629
+2026-07-21 19:54:52 | Info | Email sent to g.mamulashvili01@gmail.com: "Overdue: your library book is late"
+2026-07-21 19:54:52 | Warning | Overdue email sent to g.mamulashvili01@gmail.com for B99648
+2026-07-21 19:54:53 | Info | Email sent to g.mamulashvili01@gmail.com: "Overdue: your library book is late"
+2026-07-21 19:54:53 | Warning | Overdue email sent to g.mamulashvili01@gmail.com for B92629
+2026-07-21 19:55:18 | Info | Email sent to g.mamulashvili01@gmail.com: "Overdue: your library book is late"
+2026-07-21 19:55:18 | Warning | Overdue email sent to g.mamulashvili01@gmail.com for B99648
+2026-07-21 19:55:20 | Info | Email sent to g.mamulashvili01@gmail.com: "Overdue: your library book is late"
+2026-07-21 19:55:20 | Warning | Overdue email sent to g.mamulashvili01@gmail.com for B92629
+2026-07-21 21:03:08 | Info | Book added: 2345 - me
+2026-07-21 21:03:17 | Info | Quantity adjusted for 2345: -1
+2026-07-24 19:05:42 | Warning | Fine of 1.50 added to user 2 for B99648 (3 day(s) since last check).
+2026-07-24 19:05:42 | Warning | Fine of 1.50 added to user 2 for B92629 (3 day(s) since last check).
+2026-07-24 19:05:44 | Info | Email sent to g.mamulashvili01@gmail.com: "Overdue: Your Library Book Is Late"
+2026-07-24 19:05:44 | Warning | Overdue email sent to g.mamulashvili01@gmail.com for B99648
+2026-07-24 19:05:45 | Info | Email sent to g.mamulashvili01@gmail.com: "Overdue: Your Library Book Is Late"
+2026-07-24 19:05:45 | Warning | Overdue email sent to g.mamulashvili01@gmail.com for B92629
+2026-07-24 19:07:27 | Info | Admin deleted user 'client' (ID 2).
+2026-07-24 19:08:07 | Info | Email sent to g.mamulashvili01@gmail.com: "Verify your Library Account"
+2026-07-24 19:08:07 | Info | User 'client' registered, verification email sent to g.mamulashvili01@gmail.com.
+2026-07-24 19:08:19 | Info | User 'client' verified their account.
+2026-07-24 19:09:36 | Info | Email sent to g.mamulashvili01@gmail.com: "Overdue: Your Library Book Is Late"
+2026-07-24 19:09:36 | Warning | Overdue email sent to g.mamulashvili01@gmail.com for B99648
+2026-07-24 19:09:37 | Info | Email sent to g.mamulashvili01@gmail.com: "Overdue: Your Library Book Is Late"
+2026-07-24 19:09:37 | Warning | Overdue email sent to g.mamulashvili01@gmail.com for B92629
+2026-07-24 19:10:03 | Info | Email sent to g.mamulashvili01@gmail.com: "Overdue: Your Library Book Is Late"
+2026-07-24 19:10:03 | Warning | Overdue email sent to g.mamulashvili01@gmail.com for B99648
+2026-07-24 19:10:04 | Info | Email sent to g.mamulashvili01@gmail.com: "Overdue: Your Library Book Is Late"
+2026-07-24 19:10:04 | Warning | Overdue email sent to g.mamulashvili01@gmail.com for B92629
+2026-07-24 19:20:16 | Info | Book added: 0001 - The Alchemist
+2026-07-24 19:20:34 | Info | Book added: 0001 - dkdkdk
+2026-07-24 19:27:44 | Info | Book added: 0002 - To Kill a Mockingbird
+2026-07-24 19:28:06 | Info | Book added: 0003 - 1984
+2026-07-24 19:28:58 | Info | Book added: 0004 - The Great Gatsby
+2026-07-24 19:29:56 | Info | Email sent to fnjdjdfn@jd.com: "Verify your Library Account"
+2026-07-24 19:29:56 | Info | User 'client' registered, verification email sent to fnjdjdfn@jd.com.
+2026-07-24 19:41:25 | Info | Email sent to djdjn@djd.com: "Verify your Library Account"
+2026-07-24 19:41:25 | Info | User 'client' registered, verification email sent to djdjn@djd.com.
+2026-07-24 19:43:00 | Info | Email sent to g.mamulashvili01@gmail.com: "Verify your Library Account"
+2026-07-24 19:43:00 | Info | User 'client' registered, verification email sent to g.mamulashvili01@gmail.com.
+2026-07-24 19:44:14 | Info | Email sent to g.mamulashvili01@gmail.com: "Verify your Library Account"
+2026-07-24 19:44:14 | Info | User 'client' registered, verification email sent to g.mamulashvili01@gmail.com.
+2026-07-24 19:44:27 | Info | User 'client' verified their account.
+2026-07-24 19:44:44 | Info | Borrow request created: B91346 by user 2
+2026-07-24 19:45:48 | Info | Quantity adjusted for 0001: -100
+2026-07-24 19:46:22 | Info | Borrow request created: B47300 by user 2
+2026-07-24 19:46:28 | Info | Borrow request created: B11071 by user 2
+2026-07-24 19:46:35 | Info | Borrow request created: B78112 by user 2
+2026-07-24 19:47:10 | Info | Borrow approved: B47300, due 2026-08-01
+2026-07-24 19:47:16 | Info | Borrow rejected: B78112
+2026-07-24 19:47:43 | Info | Quantity adjusted for 0001: +5
+2026-07-24 19:47:58 | Info | Borrow approved: B91346, due 2026-08-01
+2026-07-24 19:48:43 | Warning | Borrow B91346 automatically marked Overdue.
+2026-07-24 19:48:43 | Warning | Fine of 26.50 added to user 2 for B91346 (53 day(s) since last check).
+2026-07-24 19:48:44 | Info | Email sent to g.mamulashvili01@gmail.com: "Overdue: Your Library Book Is Late"
+2026-07-24 19:48:44 | Warning | Overdue email sent to g.mamulashvili01@gmail.com for B91346

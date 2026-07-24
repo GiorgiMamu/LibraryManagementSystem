@@ -29,7 +29,7 @@ namespace UI.Menus
 
         public void Run()
         {
-            
+
             while (true)
             {
                 AnsiConsole.Clear();
@@ -73,7 +73,7 @@ namespace UI.Menus
             if (user is ClientUser client)
                 new ClientMenu(client, _authService, _bookService, _borrowService).Run();
             else if (user is AdminUser admin)
-                new AdminMenu(admin, _bookService, _borrowService, _notificationService).Run();
+                new AdminMenu(admin, _authService, _bookService, _borrowService, _notificationService).Run();
         }
 
         private void Register()

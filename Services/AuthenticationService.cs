@@ -55,10 +55,51 @@ namespace Services
 
             _userRepository.Add(newUser);
 
-            _emailService.SendEmail(
+            bool emailSent = _emailService.SendEmail(
                 email,
-                "Verify your Library account",
-                $"Hello {username},\n\nYour verification code is: {verificationCode}");
+                "Verify your Library Account",
+                $@"
+    <div style='max-width:500px;margin:40px auto;padding:30px;
+                font-family:Arial,sans-serif;
+                border:1px solid #e5e5e5;
+                border-radius:10px;
+                background:#ffffff;
+                text-align:center;'>
+
+        <h2 style='color:#2563eb;margin-bottom:10px;'>
+            📚 Library System
+        </h2>
+
+        <p style='font-size:16px;color:#444;'>
+            Hello <strong>{username}</strong>,
+        </p>
+
+        <p style='color:#666;'>
+            Thank you for registering! Use the verification code below to activate your account.
+        </p>
+
+        <div style='font-size:30px;
+                    font-weight:bold;
+                    letter-spacing:5px;
+                    color:#2563eb;
+                    background:#f3f7ff;
+                    padding:15px;
+                    margin:25px 0;
+                    border-radius:8px;'>
+            {verificationCode}
+        </div>
+
+        <p style='font-size:13px;color:#888;'>
+            If you didn't create this account, simply ignore this email.
+        </p>
+
+    </div>");
+
+            if (!emailSent)
+            {
+                _logger.LogWarning($"User '{username}' registered, but verification email to {email} failed to send.");
+                throw new EmailSendException(email);
+            }
 
             _logger.LogInfo($"User '{username}' registered, verification email sent to {email}.");
             return newUser;
@@ -100,8 +141,47 @@ namespace Services
             user.ResetVerificationCode(newCode);
             _userRepository.Update(user);
 
-            _emailService.SendEmail(email, "Your new verification code",
-                $"Your new verification code is: {newCode}");
+            bool emailSent = _emailService.SendEmail(
+    email,
+    "Your New Verification Code",
+    $@"
+    <div style='max-width:500px;margin:40px auto;padding:30px;
+                font-family:Arial,sans-serif;
+                border:1px solid #e5e5e5;
+                border-radius:10px;
+                background:#ffffff;
+                text-align:center;'>
+
+        <h2 style='color:#2563eb;margin-bottom:10px;'>
+            📚 Library System
+        </h2>
+
+        <p style='font-size:16px;color:#444;'>
+            Here is your new verification code:
+        </p>
+
+        <div style='font-size:30px;
+                    font-weight:bold;
+                    letter-spacing:5px;
+                    color:#2563eb;
+                    background:#f3f7ff;
+                    padding:15px;
+                    margin:25px 0;
+                    border-radius:8px;'>
+            {newCode}
+        </div>
+
+        <p style='font-size:13px;color:#888;'>
+            If you didn't request a new verification code, you can safely ignore this email.
+        </p>
+
+    </div>");
+
+            if (!emailSent)
+            {
+                _logger.LogWarning($"New verification code generated for {email}, but the email failed to send.");
+                throw new EmailSendException(email);
+            }
 
             _logger.LogInfo($"Resent verification code to {email}.");
         }
@@ -134,6 +214,83 @@ namespace Services
         public User? FindByEmail(string email) => _userRepository.GetByEmail(email);
         public User? GetUserById(int id) => _userRepository.GetById(id);
 
+
+        // self-service password change — requires the current password,
+        // used by the Settings menu for both Admin and Client
+        public void ChangePassword(int userId, string currentPassword, string newPassword)
+        {
+            var user = _userRepository.GetById(userId)
+                ?? throw new UserNotFoundException(userId.ToString());
+
+            if (!_passwordHasher.Verify(currentPassword, user.PasswordHash))
+                throw new InvalidCredentialsException();
+
+            if (!Validator.IsStrongPassword(newPassword))
+                throw new ArgumentException("Password must be at least 8 characters and include an uppercase letter, a lowercase letter, a number, and a symbol");
+
+            user.ChangePassword(_passwordHasher.Hash(newPassword));
+            _userRepository.Update(user);
+            _logger.LogInfo($"User '{user.Username}' changed their password.");
+
+            _emailService.SendEmail(
+    user.Email,
+    "Your Password Was Changed",
+    $@"
+    <div style='max-width:500px;margin:40px auto;padding:30px;
+                font-family:Arial,sans-serif;
+                border:1px solid #e5e5e5;
+                border-radius:10px;
+                background:#ffffff;
+                text-align:center;'>
+
+        <h2 style='color:#2563eb;margin-bottom:10px;'>
+            📚 Library System
+        </h2>
+
+        <p style='font-size:16px;color:#444;'>
+            Hello <strong>{user.Username}</strong>,
+        </p>
+
+        <p style='color:#666;'>
+            Your account password has been changed successfully.
+        </p>
+
+        <p style='color:#666;'>
+            If you made this change, no further action is required.
+        </p>
+
+        <p style='color:#d32f2f;font-weight:bold;'>
+            If you didn't change your password, please contact an administrator immediately.
+        </p>
+
+    </div>");
+        }
+
+        // self-service account deletion — requires the current password
+        public void DeleteAccount(int userId, string currentPassword)
+        {
+            var user = _userRepository.GetById(userId)
+                ?? throw new UserNotFoundException(userId.ToString());
+
+            if (!_passwordHasher.Verify(currentPassword, user.PasswordHash))
+                throw new InvalidCredentialsException();
+
+            _userRepository.Remove(userId);
+            _logger.LogInfo($"User '{user.Username}' (ID {userId}) deleted their own account.");
+        }
+
+        // admin-only: list every user in the system
+        public List<User> GetAllUsers() => _userRepository.GetAll();
+
+        // admin-only: delete any user without needing that user's password
+        public void DeleteUser(int userId)
+        {
+            var user = _userRepository.GetById(userId)
+                ?? throw new UserNotFoundException(userId.ToString());
+
+            _userRepository.Remove(userId);
+            _logger.LogInfo($"Admin deleted user '{user.Username}' (ID {userId}).");
+        }
 
     }
 }

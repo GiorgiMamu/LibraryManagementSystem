@@ -73,6 +73,13 @@ namespace Core.Exceptions
             : base($" '{username}' is already taken.") { }
     }
 
+    // thrown when trying to add a book whose ISBN already exists in the catalog
+    public class DuplicateBookException : Exception
+    {
+        public DuplicateBookException(string isbn)
+            : base($"A book with ISBN '{isbn}' already exists.") { }
+    }
+
     // thrown when a user tries to borrow a book but has an outstanding fine
     public class FineOutstandingException : Exception
     {
@@ -99,5 +106,12 @@ namespace Core.Exceptions
     {
         public NoOutstandingFineException()
             : base("You have no outstanding fines to pay.") { }
+    }
+
+    // thrown when an email could not be sent (e.g. SMTP rejected it or the send attempt failed)
+    public class EmailSendException : Exception
+    {
+        public EmailSendException(string toEmail)
+            : base($"Failed to send email to '{toEmail}'.") { }
     }
 }

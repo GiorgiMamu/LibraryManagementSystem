@@ -48,6 +48,12 @@ namespace Repository
             _fileManager.WriteLines(_path, lines);
         }
 
+        public void Remove(int id)
+        {
+            var remaining = GetAll().Where(u => u.Id != id).Select(ToLine).ToList();
+            _fileManager.WriteLines(_path, remaining);
+        }
+
         private User? ParseLine(string line)
         {
             try

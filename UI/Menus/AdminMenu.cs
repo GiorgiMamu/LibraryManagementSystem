@@ -11,17 +11,20 @@ namespace UI.Menus
     public class AdminMenu : MenuBase
     {
         private readonly AdminUser _admin;
+        private readonly IAuthenticationService _authService;
         private readonly IBookService _bookService;
         private readonly IBorrowService _borrowService;
         private readonly INotificationService _notificationService;
 
         public AdminMenu(
             AdminUser admin,
+            IAuthenticationService authService,
             IBookService bookService,
             IBorrowService borrowService,
             INotificationService notificationService)
         {
             _admin = admin;
+            _authService = authService;
             _bookService = bookService;
             _borrowService = borrowService;
             _notificationService = notificationService;
@@ -38,6 +41,9 @@ namespace UI.Menus
             "Manage borrow requests",
             "View all borrowed books",
             "Check overdue & send notifications",
+            "View all users",
+            "Delete a user",
+            "Settings",
             "Logout"
         };
 
@@ -55,6 +61,9 @@ namespace UI.Menus
                 case "Manage borrow requests": ManageBorrowRequests(); return true;
                 case "View all borrowed books": ShowAllBorrowRecords(); return true;
                 case "Check overdue & send notifications": CheckOverdueAndNotify(); return true;
+                case "View all users": ShowAllUsers(); return true;
+                case "Delete a user": DeleteUser(); return true;
+                case "Settings": return SettingsMenu.Show(_admin.Id, _admin.Username, _authService);
                 case "Logout":
                     return false;
                 default:
@@ -206,6 +215,67 @@ namespace UI.Menus
                 ? "[green]No due-date notifications to send right now.[/]"
                 : $"[green]{notified.Count} notification(s) sent.[/]");
             foreach (var line in notified) AnsiConsole.WriteLine(line);
+        }
+
+        private void ShowAllUsers()
+        {
+            var users = _authService.GetAllUsers();
+            if (users.Count == 0)
+            {
+                AnsiConsole.MarkupLine("[yellow]No users registered yet.[/]");
+                return;
+            }
+
+            var table = new Table().Border(TableBorder.Rounded);
+            table.AddColumn("ID");
+            table.AddColumn("Username");
+            table.AddColumn("Email");
+            table.AddColumn("Role");
+            table.AddColumn("Verified");
+            table.AddColumn("Fines");
+
+            foreach (var u in users)
+            {
+                string fines = u is ClientUser client ? client.Fines.ToString("F2") : "-";
+                table.AddRow(u.Id.ToString(), u.Username, u.Email, u.Role.ToString(),
+                    u.IsVerified ? "Yes" : "No", fines);
+            }
+
+            AnsiConsole.Write(table);
+        }
+
+        private void DeleteUser()
+        {
+            var users = _authService.GetAllUsers();
+            if (users.Count == 0)
+            {
+                AnsiConsole.MarkupLine("[yellow]No users registered yet.[/]");
+                return;
+            }
+
+            var choices = users.Select(u => $"{u.Id} — {u.Username} ({u.Role})").ToList();
+            choices.Add("Cancel");
+            string selected = AnsiConsole.Prompt(
+                new SelectionPrompt<string>().Title("Select a user to delete:").AddChoices(choices));
+            if (selected == "Cancel") return;
+
+            int id = int.Parse(selected.Split(" — ")[0]);
+
+            if (id == _admin.Id)
+            {
+                AnsiConsole.MarkupLine("[red]Use 'Settings' to delete your own account.[/]");
+                return;
+            }
+
+            var target = users.First(u => u.Id == id);
+            if (!AnsiConsole.Confirm($"[red]Permanently delete user '{target.Username}'? This cannot be undone.[/]", false))
+            {
+                AnsiConsole.MarkupLine("[yellow]Cancelled.[/]");
+                return;
+            }
+
+            _authService.DeleteUser(id);
+            AnsiConsole.MarkupLine($"[green]User '{target.Username}' deleted.[/]");
         }
     }
 }

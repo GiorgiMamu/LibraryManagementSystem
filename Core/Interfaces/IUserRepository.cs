@@ -13,6 +13,8 @@ namespace Core.Interfaces
         User? GetByUsername(string username);
         User? GetByEmail(string email);
         void Add(User user);
-        void Update(User user); 
+        void Update(User user);
+        void Remove(int id);
+
     }
 }

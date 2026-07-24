@@ -10,7 +10,7 @@ namespace Core.Models
         private readonly int _id;
         private readonly string _username;
         private readonly string _email;
-        private readonly string _passwordHash;
+        private string _passwordHash;
         private string _verificationCode; // can be reset on resend
         private bool _isVerified;
 
@@ -55,6 +55,12 @@ namespace Core.Models
             if (_isVerified) return;
             _verificationCode = newCode;
         }
+
+        // the only way PasswordHash can change after registration — caller
+        // (AuthenticationService) is responsible for hashing the new password
+        // first and verifying the old one before calling this
+        public void ChangePassword(string newPasswordHash) =>
+            _passwordHash = newPasswordHash;
 
 
     }

@@ -36,6 +36,7 @@ namespace UI.Menus
             "My borrowed books",
             "View my fines",
             "Pay a fine",
+            "Settings",
             "Logout"
         };
 
@@ -70,6 +71,8 @@ namespace UI.Menus
                 case "Pay a fine":
                     PayFineFlow();
                     return true;
+                case "Settings":
+                    return SettingsMenu.Show(_client.Id, _client.Username, _authService);
                 case "Logout":
                     return false;
                 default:
@@ -135,7 +138,7 @@ namespace UI.Menus
                 new SelectionPrompt<string>().Title("Select a borrow to return:").AddChoices(choices));
             if (selected == "Cancel") return;
 
-            
+
             _borrowService.ReturnBook(_client, selected);
             AnsiConsole.MarkupLine("[green]Book returned.[/]");
         }

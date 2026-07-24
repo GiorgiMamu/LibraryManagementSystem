@@ -1,1 +1,4 @@
-1234 | 1984 | george | 52
+0001 | The Alchemist | Paulo Coelho | 4
+0002 | To Kill a Mockingbird | Harper Lee | 149
+0003 | 1984 | George Orwell | 50
+0004 | The Great Gatsby | Scott Fitzgerald | 200

@@ -16,7 +16,7 @@ namespace Services.Email
             _logger = logger;
         }
 
-        public void SendEmail(string toEmail, string subject, string body)
+        public bool SendEmail(string toEmail, string subject, string body)
         {
             try
             {
@@ -40,16 +40,18 @@ namespace Services.Email
                     From = new MailAddress(username, fromName),
                     Subject = subject,
                     Body = body,
-                    IsBodyHtml = false
+                    IsBodyHtml = true
                 };
                 mail.To.Add(toEmail);
 
                 client.Send(mail);
                 _logger.LogInfo($"Email sent to {toEmail}: \"{subject}\"");
+                return true;
             }
             catch (Exception ex)
             {
                 _logger.LogError($"Failed to send email to {toEmail}", ex);
+                return false;
             }
         }
     }

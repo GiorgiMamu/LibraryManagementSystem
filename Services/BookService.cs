@@ -31,6 +31,8 @@ namespace Services
                 throw new ArgumentException("Author must start with a letter and contain only letters, spaces, or hyphens.");
             if (quantity < 0)
                 throw new ArgumentException("Quantity cannot be negative.");
+            if (_bookRepository.GetByIsbn(isbn) != null)
+                throw new DuplicateBookException(isbn);
 
             _bookRepository.Add(new Book(isbn, title, author, quantity));
             _logger.LogInfo($"Book added: {isbn} - {title}");
